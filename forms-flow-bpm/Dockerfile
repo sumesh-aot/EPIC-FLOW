@@ -9,7 +9,8 @@ ARG FORMS_FLOW_VERSION=v4.0.5-alpha
 
 RUN git clone -b ${FORMS_FLOW_VERSION} ${FORMS_FLOW_REPO} /bpm/
 
-RUN cp /bpm/forms-flow-bpm/pom-docker.xml /tmp/pom.xml
+# RUN cp /bpm/forms-flow-bpm/pom-docker.xml /tmp/pom.xml
+COPY ./pom-docker.xml /tmp/pom.xml
 RUN cp /bpm/forms-flow-bpm/settings-docker.xml /usr/share/maven/ref/
 
 WORKDIR /tmp/
